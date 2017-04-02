@@ -23,7 +23,7 @@ def wechat_auth():
 		content = i.find('Content').text
 		reply = '<xml><ToUserName><![CDATA[%s]]></ToUserName> \
 				<FromUserName><![CDATA[%s]]></FromUserName> \
-				<CreateTime><![CDATA[%s]]></CreateTime> \
+				<CreateTime>%s</CreateTime> \
 				<MsgType><![CDATA[text]]></MsgType> \
 				<Content><![CDATA[%s]]></Content> \
 				<FuncFlag>0</FuncFlag></xml>'  #
