@@ -9,7 +9,7 @@ import xml.etree.ElementTree as ET
 app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
-def wechat_auth():
+def wechat():
 	if request.method == 'GET':
 		if len(request.args) > 3:
 			echostr = request.args['echostr']	#
