@@ -8,16 +8,10 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def wechat_auth():
 	if request.method == 'GET':
-		token = 'niceday'
-		signature = request.args['signature']
-		timestamp = request.args['timestamp']
-		nonce = request.args['nonce']
-		echostr = request.args['echostr']
-		s = [timestamp, nounce, token]
-		s.sort() # what for?
-		s = ''.join(s)
-		if hashlib.sha1(s).hexdigest() == signature :
+		if len(request.args) > 3:
 			return make_response(echostr) # what for?
+		else:
+			return 'Wanna get something?'
 	else:
 		return 'say hi to captain Butler'
 
