@@ -28,9 +28,8 @@ def wechat_auth():
 				<Content><![CDATA[%s]]></Content> \
 				<FuncFlag>0</FuncFlag></xml>'  #
 		o = make_response(reply % (user, server, str(int(time.time())), content))		
-o.content_type = 'application/xml'   #
+		o.content_type = 'application/xml'   #
 		return o
-
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=80) 
