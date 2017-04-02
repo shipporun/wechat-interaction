@@ -21,15 +21,19 @@ def wechat():
 		server = i.find('ToUserName').text
 		user = i.find('FromUserName').text
 		content = i.find('Content').text
-		reply = '<xml><ToUserName><![CDATA[%s]]></ToUserName> \
+		msgtype = i.find('MsgType').text
+		if msgtype == 'text':
+			reply = '<xml><ToUserName><![CDATA[%s]]></ToUserName> \
 				<FromUserName><![CDATA[%s]]></FromUserName> \
 				<CreateTime>%s</CreateTime> \
 				<MsgType><![CDATA[text]]></MsgType> \
 				<Content><![CDATA[%s]]></Content> \
 				<FuncFlag>0</FuncFlag></xml>'  #
-		o = make_response(reply % (user, server, str(int(time.time())), content))		
-		o.content_type = 'application/xml'   #
-		return o
+			o = make_response(reply % (user, server, str(int(time.time())), content))		
+			o.content_type = 'application/xml'   #
+			return o
+		else:
+			return''
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=80) 
