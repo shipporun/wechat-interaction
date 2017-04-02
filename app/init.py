@@ -9,7 +9,8 @@ app = Flask(__name__)
 def wechat_auth():
 	if request.method == 'GET':
 		if len(request.args) > 3:
-			return make_response(echostr) # what for?
+			echostr = request.args['echostr']
+			return echostr
 		else:
 			return 'Wanna get something?'
 	else:
