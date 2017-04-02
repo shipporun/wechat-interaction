@@ -27,8 +27,8 @@ def wechat_auth():
 				<MsgType><![CDATA[text]]></MsgType> \
 				<Content><![CDATA[%s]]></Content> \
 				<FuncFlag>0</FuncFlag></xml>'  #
-		o = make_response(reply % (user, server, str(int(time.time()))), content)
-		o.content_type = 'application/xml'   #
+		o = make_response(reply % (user, server, str(int(time.time())), content))		
+o.content_type = 'application/xml'   #
 		return o
 
 
