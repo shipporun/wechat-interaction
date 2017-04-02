@@ -35,7 +35,7 @@ def wechat():
 				content = '输入 城市名，获取当前天气 \
 						输入 history，获取查询记录\
 						输入 help，获取帮助文档'
-			elif content == 'history'
+			elif content == 'history':
 				content = set(listH)
 			else:
 				data = fetchWeather(content, 1)
