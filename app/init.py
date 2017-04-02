@@ -42,7 +42,7 @@ def wechat():
 				if 'status' in data:
 					content = 'No result. Need help?'
 				else:
-					a = sortData(data, key, 1)
+					a = sortData(data, content, 1)
 					content = a[0]
 					listH.append(a[0])
 			o = make_response(reply % (user, server, str(int(time.time())), content))		
