@@ -33,7 +33,7 @@ def wechat():
 			o.content_type = 'application/xml'   #
 			return o
 		else:
-			return''
+			return'喵喵喵'
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=80) 
